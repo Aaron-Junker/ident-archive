@@ -8,7 +8,7 @@ layout: default
 {% assign page_name = page.organization | append: '.md' %}
 {% assign page_info = site.pages | where: 'name', page_name %}
 {% assign full_org_name = page_info[0].fullname %}
-
+<h1> {{ page.fulltitle }} </h1>
 <h2> Video </h2>
 
 <video src="../media/{{ page.organization }}-{{ page.title }}-{{ page.watermark }}-{{ page.language }}-{{page.usagedate}}.mp4" controls style="width: 100%;"></video>
