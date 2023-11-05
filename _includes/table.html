@@ -23,39 +23,45 @@ function closePropertyDialog(id) {
         <h1>{{ entry.fulltitle }}</h1>
         {% include propertytable.md page=entry %}
         <button onClick="closePropertyDialog('propertydialog-{{count}}')">Close</button>
+        <a href="{{ entry.url }}" style="float: right;">Open page</a>
     </dialog></div>
     {% assign count=count|plus: 1 %}
 {% endfor %}
-
-<table>
+<div style="overflow-y: auto;">
+<table >
     <thead>
         <tr>
             <td><b>Name</b></td>
+            <td style="border-right-style: hidden;border-left-style: hidden;"></td><td style="border-right-style: hidden;border-left-style: hidden;"></td><td style="border-left-style: hidden;"></td>
             {% unless include.hide_org %}
             <td><b>Organization</b></td>
             {% endunless %}
             {% unless include.hide_language %}
             <td><b>Language</b></td>
             {% endunless %}
+            {% unless include.hide_date %}
             <td><b>Date</b></td>
+            {% endunless %}
             <td><b>Watermark</b></td>
-            <td></td>
+            <td width="1"></td>
         </tr>
     </thead>
     {% assign count=0 %}
     {% for entry in include.entries %}
         <tr>
-            <td><a href="{{entry.url}}">{{entry.fulltitle}}</a></td>
+            <td colspan="4"><a href="{{entry.url}}">{{entry.fulltitle}}</a></td>
             {% unless include.hide_org %}
             <td><a title="{% include fullorgname.md language=entry.organization %}" href="/categories/org/{{ entry.organization }}">{{ entry.organization }}</a></td>
             {% endunless %}
             {% unless include.hide_language %}
             <td><a href="/categories/language/{{ entry.language }}">{% include fulllanguagename.md language=entry.language %}</a></td>
             {% endunless %}
+            {% unless include.hide_date %}
             <td>{{ entry.usagedate }}</td>
+            {% endunless %}
             <td>{{ entry.watermark }}</td>
             <td><a href="javascript:showPropertyDialog('propertydialog-{{ count }}')">ℹ️</a></td>
         </tr>
         {% assign count=count|plus: 1 %}
     {% endfor %}
-</table>
+</table></div>
