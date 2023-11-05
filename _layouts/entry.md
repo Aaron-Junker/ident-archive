@@ -34,7 +34,6 @@ layout: default
         <td>Date</td>
         <td>{{ page.usagedate }}</td>
     </tr>
-    {% unless page.source Or page.source == "" %}
     <tr>
         <td>Source</td>
         <td>{% if page.source And page.source != "" %}{{ page.source }}{% else %}<i>No information</i>{% endif %}</td>
