@@ -12,6 +12,8 @@ layout: default
 {% assign organizations = organizations | sort_natural %}
 <ul>
 {% for org in organizations %}
-<li><a href="{{ org }}">{{ org }}</a></li>
+{% assign page_name = org | append: '.md'%}
+{% assign page_info = site.pages | where: 'name', page_name %}
+<li><a href="{{ org }}">{{ page_info[0].fullname }}{% if page_info[0].fullname != page_info[0].smallname %} ({{page_info[0].smallname}}){%endif %}</a></li>
 {% endfor %}
 </ul>

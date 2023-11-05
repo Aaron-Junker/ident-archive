@@ -1,7 +1,13 @@
 ---
 layout: default
 ---
-<h1> {{ page.fulltitle }} </h1>
+{% assign page_name = page.language | append: '.md' %}
+{% assign page_info = site.pages | where: 'name', page_name %}
+{% assign full_language_name = page_info[0].fullname %}
+
+{% assign page_name = page.organization | append: '.md' %}
+{% assign page_info = site.pages | where: 'name', page_name %}
+{% assign full_org_name = page_info[0].fullname %}
 
 <h2> Video </h2>
 
@@ -18,7 +24,7 @@ layout: default
     </thead>
     <tr>
         <td>Organization</td>
-        <td><a href="/categories/org/{{ page.organization }}">{{ page.organization }}</a></td>
+        <td><a title="{{ full_org_name }}" href="/categories/org/{{ page.organization }}">{{ page.organization }}</a></td>
     </tr>
     <tr>
         <td>Title</td>
@@ -30,7 +36,7 @@ layout: default
     </tr>
     <tr>
         <td>Language</td>
-        <td><a href="/categories/language/{{ page.language }}">{{ page.language }}</a></td>
+        <td><a href="/categories/language/{{ page.language }}">{{ full_language_name }}</a></td>
     </tr>
     <tr>
         <td>Date</td>

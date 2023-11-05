@@ -12,6 +12,8 @@ layout: default
 {% assign languages = languages | sort_natural %}
 <ul>
 {% for l in languages %}
-<li><a href="{{ l }}">{{ l }}</a></li>
+{% assign page_name = l | append: '.md'%}
+{% assign page_info = site.pages | where: 'name', page_name %}
+<li><a href="{{ l }}">{{ page_info[0].fullname }}</a></li>
 {% endfor %}
 </ul>
