@@ -1,6 +1,6 @@
 ---
 layout: entry
-title: Shadybug Ad bumper-Miraculous World Paris preintro
+title: Shadybug Ad bumper-Miraculous World Paris Preintro
 organisation: Disney Channel
 usagedate: 2023-10-21
 language: fr
