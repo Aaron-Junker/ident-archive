@@ -5,7 +5,7 @@ layout: default
 
 <h3> Video </h3>
 
-<video src="../media/{{ page.organisation }}-{{ page.title }}-{{ page.watermark }}-{{ page.language }}-{{page.usagedate}}.mp4" controls width="800"></video>
+<video src="../media/{{ page.organisation }}-{{ page.title }}-{{ page.watermark }}-{{ page.language }}-{{page.usagedate}}.mp4" controls style="width: 100%;"></video>
 
 <h3> Properties </h3>
 
