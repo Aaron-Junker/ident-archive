@@ -1,7 +1,7 @@
 ---
 layout: entry
 title: SRF Börse Intro
-organisation: SRF
+organization: SRF
 usagedate: 2021-
 language: de
 fulltitle: SRF Börse Intro (2021-)
