@@ -3,11 +3,15 @@ layout: default
 ---
 # Organizations
 
-{% capture organizations %}{% for p in entries %}{{ p.organization }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
-{% assign organizations_list = organizations | split:',' | sort_natural %}
-
+{% assign organizations = '' | split: '' %}
+{% for p in site.entries %}
+    {% unless organizations contains p.organization %}
+        {% assign organizations = organizations | push: p.organization %}
+    {% endunless %}
+{% endfor %}
+{% assign organizations = organizations | sort_natural %}
 <ul>
-{% for org in organizations_list %}
-<li>[{{ org }}]({{ org | downcase | replace: ' ', '-' }})</li>
+{% for org in organizations %}
+<li><a href="{{ org }}">{{ org }}</a></li>
 {% endfor %}
 </ul>

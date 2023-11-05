@@ -3,11 +3,15 @@ layout: default
 ---
 # Languages
 
-{% capture languages %}{% for p in entries %}{{ p.language }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
-{% assign languages_list = languages | split:',' | sort_natural %}
-
+{% assign languages = '' | split: '' %}
+{% for p in site.entries %}
+    {% unless languages contains p.language %}
+        {% assign languages = languages | push: p.language %}
+    {% endunless %}
+{% endfor %}
+{% assign languages = languages | sort_natural %}
 <ul>
-{% for l in languages_list %}
-<li>[{{ l }}]({{ l | downcase | replace: ' ', '-' }})</li>
+{% for l in languages %}
+<li><a href="{{ l }}">{{ l }}</a></li>
 {% endfor %}
 </ul>

@@ -5,7 +5,7 @@ layout: default
 <ul>
     {% for entry in site.entries %}
         {% if entry.language == page.smallname %}
-            <li><p><a href="{{entry.url}}">{{entry.fulltitle}}</a></p></li>
+            <li><a href="{{entry.url}}">{{entry.fulltitle}}</a></li>
         {% endif %}
     {% endfor %}
 </ul>

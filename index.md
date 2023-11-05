@@ -6,6 +6,10 @@ layout: default
 
 All rights belong to the TV stations. This is a non-commercial archive.
 
+## Sort by
+* [Organization](/categories/org/)
+* [Language](/categories/language/)
+
 ## Entries
 
 {% for entry in site.entries %}

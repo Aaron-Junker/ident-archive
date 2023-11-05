@@ -7,3 +7,4 @@ language: rt
 fulltitle: RTR Telesguard Intro (2010-2017)
 watermark: SRF Info
 ---
+With teletext information and welcoming.
