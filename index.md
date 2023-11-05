@@ -14,4 +14,4 @@ Current entry count: {{site.entries | size}}
 
 ## Entries
 
-{% include table.md entries=site.entries %}
+{% include table.html entries=site.entries %}

@@ -15,38 +15,7 @@ layout: default
 
 <h2> Properties </h2>
 
-<table>
-    <thead>
-        <tr>
-            <td><b>Property:</b></td>
-            <td><b>Value:</b></td>
-        </tr>
-    </thead>
-    <tr>
-        <td>Organization</td>
-        <td><a title="{{ full_org_name }}" href="/categories/org/{{ page.organization }}">{{ page.organization }}</a></td>
-    </tr>
-    <tr>
-        <td>Title</td>
-        <td>{{ page.title }}</td>
-    </tr>
-    <tr>
-        <td>Watermark</td>
-        <td>{{ page.watermark }}</td>
-    </tr>
-    <tr>
-        <td>Language</td>
-        <td><a href="/categories/language/{{ page.language }}">{{ full_language_name }}</a></td>
-    </tr>
-    <tr>
-        <td>Date</td>
-        <td>{{ page.usagedate }}</td>
-    </tr>
-    <tr>
-        <td>Source</td>
-        <td>{% if page.source %}<a href="{{page.sourceurl}}">{{ page.source }}</a>{% else %}<i>No information</i>{% endif %}</td>
-    </tr>
-</table>
+{% include propertytable.md page=page %}
 
 {% assign content = content | strip_newlines %}
 {% unless content == "" %}

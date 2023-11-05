@@ -1,0 +1,61 @@
+<script>
+function showPropertyDialog(id) {
+    var dialog = document.getElementById(id);
+    dialog.style.display = "block";
+    dialog.showModal();
+    window.onkeydown = function(event) {
+        if (event.keyCode == 27) {
+            closePropertyDialog(id);
+        }
+    };
+}
+function closePropertyDialog(id) {
+    var dialog = document.getElementById(id);
+    dialog.style.display = "none";
+    dialog.close();
+}
+</script>
+
+{% assign count=0 %}
+{% for entry in include.entries %}
+<div>
+    <dialog id="propertydialog-{{ count }}" style="display:none; width: 90%;">
+        <h1>{{ entry.fulltitle }}</h1>
+        {% include propertytable.md page=entry %}
+        <button onClick="closePropertyDialog('propertydialog-{{count}}')">Close</button>
+    </dialog></div>
+    {% assign count=count|plus: 1 %}
+{% endfor %}
+
+<table>
+    <thead>
+        <tr>
+            <td><b>Name</b></td>
+            {% unless include.hide_org %}
+            <td><b>Organization</b></td>
+            {% endunless %}
+            {% unless include.hide_language %}
+            <td><b>Language</b></td>
+            {% endunless %}
+            <td><b>Date</b></td>
+            <td><b>Watermark</b></td>
+            <td></td>
+        </tr>
+    </thead>
+    {% assign count=0 %}
+    {% for entry in include.entries %}
+        <tr>
+            <td><a href="{{entry.url}}">{{entry.fulltitle}}</a></td>
+            {% unless include.hide_org %}
+            <td><a title="{% include fullorgname.md language=entry.organization %}" href="/categories/org/{{ entry.organization }}">{{ entry.organization }}</a></td>
+            {% endunless %}
+            {% unless include.hide_language %}
+            <td><a href="/categories/language/{{ entry.language }}">{% include fulllanguagename.md language=entry.language %}</a></td>
+            {% endunless %}
+            <td>{{ entry.usagedate }}</td>
+            <td>{{ entry.watermark }}</td>
+            <td><a href="javascript:showPropertyDialog('propertydialog-{{ count }}')">ℹ️</a></td>
+        </tr>
+        {% assign count=count|plus: 1 %}
+    {% endfor %}
+</table>
