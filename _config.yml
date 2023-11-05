@@ -1,0 +1,15 @@
+title: Ident Archive
+email: aaron.junker@outlook.com
+description: >- # this means to ignore newlines until "baseurl:"
+  An archive of idents and TV intros.
+baseurl: "" 
+url: "" 
+
+theme: minima
+plugins:
+  - jekyll-feed
+
+collections:
+  entries:
+    output: true
+    permalink: /:collection/:name
