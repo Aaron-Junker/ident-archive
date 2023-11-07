@@ -11,7 +11,9 @@ layout: default
 <h1> {{ page.fulltitle }} </h1>
 <h2> Video </h2>
 
-<video src="../media/{{ page.organization }}-{{ page.title }}-{{ page.watermark }}-{{ page.language }}-{{page.usagedate}}.mp4" controls style="width: 100%;"></video>
+{% capture fileExtension %}{% if page.fileExtension %}{{ page.fileExtension }}{% else %}mp4{% endif %}{% endcapture %}
+
+<video src="../media/{{ page.organization }}-{{ page.title }}-{{ page.watermark }}-{{ page.language }}-{{page.usagedate}}.{{fileExtension}}" controls style="width: 100%;"></video>
 
 <h2> Properties </h2>
 

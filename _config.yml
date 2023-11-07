@@ -13,3 +13,6 @@ collections:
   entries:
     output: true
     permalink: /:collection/:name
+
+gems:
+  - jekyll-sitemap
