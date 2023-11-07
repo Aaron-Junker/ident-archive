@@ -6,7 +6,7 @@
         </tr>
     </thead>
     <tr>
-        <td>Organization</td>
+        <td>Organization<a href="/about/Properties/Organization">？</a></td>
         {% assign o=include.page.organization %}
         <td><a title="{% include fullorgname.md organization=o %}" href="/categories/org/{{ include.page.organization }}">{{ include.page.organization }}</a></td>
     </tr>
@@ -15,7 +15,7 @@
         <td>{{ include.page.title }}</td>
     </tr>
     <tr>
-        <td>Watermark</td>
+        <td>Watermark<a href="/about/Properties/Watermark">？</a></td>
         <td>{{ include.page.watermark }}</td>
     </tr>
     <tr>
@@ -24,11 +24,11 @@
         <td><a href="/categories/language/{{ include.page.language }}">{% include fulllanguagename.md language=l %}</a></td>
     </tr>
     <tr>
-        <td>Date</td>
+        <td>Date<a href="/about/Properties/Date">？</a></td>
         <td>{{ include.page.usagedate }}</td>
     </tr>
     <tr>
-        <td>Source</td>
+        <td>Source<a href="/about/Properties/Source">？</a></td>
         <td>{% if include.page.source %}<a href="{{include.page.sourceurl}}">{{ include.page.source }}</a>{% else %}<i>No information</i>{% endif %}</td>
     </tr>
 </table>

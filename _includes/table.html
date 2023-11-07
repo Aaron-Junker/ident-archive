@@ -28,22 +28,22 @@ function closePropertyDialog(id) {
     {% assign count=count|plus: 1 %}
 {% endfor %}
 <div style="overflow-y: auto;">
-<table >
+<table>
     <thead>
         <tr>
-            <td><b>Name</b></td>
-            <td style="border-right-style: hidden;border-left-style: hidden;"></td><td style="border-right-style: hidden;border-left-style: hidden;"></td><td style="border-left-style: hidden;"></td>
+            <th><b>Name</b></th>
+            <th style="border-right-style: hidden;border-left-style: hidden;"></th><th style="border-right-style: hidden;border-left-style: hidden;"></th><th style="border-left-style: hidden;"></th>
             {% unless include.hide_org %}
-            <td><b>Organization</b></td>
+            <th><b>Organization</b></th>
             {% endunless %}
             {% unless include.hide_language %}
-            <td><b>Language</b></td>
+            <th><b>Language</b></th>
             {% endunless %}
             {% unless include.hide_date %}
-            <td><b>Date</b></td>
+            <th><b>Date</b></th>
             {% endunless %}
-            <td><b>Watermark</b></td>
-            <td width="1"></td>
+            <th><b>Watermark</b></th>
+            <th width="1"></th>
         </tr>
     </thead>
     {% assign count=0 %}
