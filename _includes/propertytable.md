@@ -1,8 +1,8 @@
 <table>
     <thead>
         <tr>
-            <td><b>Property:</b></td>
-            <td><b>Value:</b></td>
+            <th><b>Property:</b></th>
+            <th><b>Value:</b></th>
         </tr>
     </thead>
     <tr>
