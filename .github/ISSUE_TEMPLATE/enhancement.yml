@@ -1,0 +1,15 @@
+name: "Enhancement suggestion"
+description: "Suggest an enhancement to the website or the docs"
+labels: "Type-Enhancement"
+assignees: "Aaron-Junker"
+body:
+- type: checkboxes
+  attributes:
+    label: "Related to the documentation?"
+    options:
+      - label: Issue is related to documentation
+- type: textarea
+  attributes:
+    label: "Describe your enhancement request:"
+  validations:
+    required: true
