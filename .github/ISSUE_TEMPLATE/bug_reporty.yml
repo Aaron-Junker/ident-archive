@@ -9,12 +9,10 @@ body:
       - label: "Related to a specific entry"
         required: true
 - type: input
-  attributes:
-    label: "Url to where the issue occurs:"
+  label: "Url to where the issue occurs:"
   validations:
     required: false
 - type: textarea
-  attributes:
-    label: "Describe the issue:"
+  label: "Describe the issue:"
   validations:
     required: true
