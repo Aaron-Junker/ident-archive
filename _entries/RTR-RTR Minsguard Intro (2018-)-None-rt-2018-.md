@@ -1,6 +1,6 @@
 ---
 layout: entry
-title: RTR Minsguard Intro (2018-)
+title: RTR Minsguard Intro
 organization: RTR
 usagedate: 2018-
 language: rt

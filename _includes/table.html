@@ -48,20 +48,22 @@ function closePropertyDialog(id) {
     </thead>
     {% assign count=0 %}
     {% for entry in include.entries %}
-        <tr>
-            <td colspan="4"><a href="{{entry.url}}">{{entry.fulltitle}}</a></td>
-            {% unless include.hide_org %}
-            <td><a title="{% include fullorgname.md language=entry.organization %}" href="/categories/org/{{ entry.organization }}">{{ entry.organization }}</a></td>
-            {% endunless %}
-            {% unless include.hide_language %}
-            <td><a href="/categories/language/{{ entry.language }}">{% include fulllanguagename.md language=entry.language %}</a></td>
-            {% endunless %}
-            {% unless include.hide_date %}
-            <td>{{ entry.usagedate }}</td>
-            {% endunless %}
-            <td>{{ entry.watermark }}</td>
-            <td><a href="javascript:showPropertyDialog('propertydialog-{{ count }}')">ℹ️</a></td>
-        </tr>
-        {% assign count=count|plus: 1 %}
+        {% if entry.fulltitle != page.fulltitle %}
+            <tr>
+                <td colspan="4"><a href="{{entry.url}}">{{entry.fulltitle}}</a></td>
+                {% unless include.hide_org %}
+                <td><a title="{% include fullorgname.md language=entry.organization %}" href="/categories/org/{{ entry.organization }}">{{ entry.organization }}</a></td>
+                {% endunless %}
+                {% unless include.hide_language %}
+                <td><a href="/categories/language/{{ entry.language }}">{% include fulllanguagename.md language=entry.language %}</a></td>
+                {% endunless %}
+                {% unless include.hide_date %}
+                <td>{{ entry.usagedate }}</td>
+                {% endunless %}
+                <td>{{ entry.watermark }}</td>
+                <td><a href="javascript:showPropertyDialog('propertydialog-{{ count }}')">ℹ️</a></td>
+            </tr>
+            {% assign count=count|plus: 1 %}
+        {% endif %}
     {% endfor %}
 </table></div>

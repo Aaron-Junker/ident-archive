@@ -24,3 +24,10 @@ layout: default
 <h2> Additional information </h2>
 {{ content }}
 {% endunless %}
+
+{% assign entries = site.entries | where: 'title',page.title %}
+{% assign entries_count = entries | size %}
+{% if entries_count > 1 %}
+    <h2> Related entries </h2>
+    {% include table.html entries=entries %}
+{% endif %}
