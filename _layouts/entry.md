@@ -2,6 +2,7 @@
 layout: default
 ---
 {% assign page_name = page.language | append: '.md' %}
+{% if page.type == '' %}{% assign page.type = 'Video' %}{% endif %}
 {% assign page_info = site.pages | where: 'name', page_name %}
 {% assign full_language_name = page_info[0].fullname %}
 

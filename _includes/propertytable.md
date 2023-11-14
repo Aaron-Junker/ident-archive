@@ -1,3 +1,4 @@
+{% capture type %}{% if include.page.type %}{{ include.page.type }}{% else %}Video{% endif %}{% endcapture %}
 <table>
     <thead>
         <tr>
@@ -5,6 +6,10 @@
             <td><b>Value:</b></td>
         </tr>
     </thead>
+    <tr>
+        <td>Type</td>
+        <td><a href="/categories/type/{{ type }}">{{ type }}</td>
+    </tr>
     <tr>
         <td>Organization<a href="/about/Properties/Organization">？</a></td>
         {% assign o=include.page.organization %}
@@ -14,10 +19,12 @@
         <td>Title</td>
         <td>{{ include.page.title }}</td>
     </tr>
+    {% unless type == "Audio" %}
     <tr>
         <td>Watermark<a href="/about/Properties/Watermark">？</a></td>
         <td>{{ include.page.watermark }}</td>
     </tr>
+    {% endunless %}
     <tr>
         <td>Language</td>
         {% assign l=include.page.language %}
