@@ -1,0 +1,6 @@
+- [ ] Fixing a bug
+  - [ ] Linked issue: Closes #...
+- [ ] Adding a new media file
+  - [ ] I tested it locally
+  - [ ] This PR only adds one media file or one collection of media files
+  - [ ] If it uses a new Language or a new Organization, I added them in the categories folder.

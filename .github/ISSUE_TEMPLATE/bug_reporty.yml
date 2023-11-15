@@ -1,0 +1,20 @@
+name: "Bug report"
+description: "Report a bug you're experiencing on the Website"
+labels: "Type-Bug"
+assignees: "Aaron-Junker"
+body:
+- type: checkboxes
+  attributes:
+    label: "Related to a specific entry?"
+    options:
+      - label: Issue is related to specific entry
+- type: input
+  attributes:
+    label: "Url to where the issue occurs:"
+  validations:
+    required: false
+- type: textarea
+  attributes:
+    label: "Describe the issue:"
+  validations:
+    required: true
