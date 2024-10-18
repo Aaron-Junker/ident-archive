@@ -1,8 +1,22 @@
 <script>
     function openAsPopup(url){
-        window.open(url + "?hideHeader", "More Information", "scrollbars=no,resizable=no,status=no,location=no,toolbar=no, menubar=no,width=0,height=0,left=-1000,top=-300")
+        var dialog = document.getElementById('helpdialog');
+        var iframe = document.getElementById('helpdialogiframe');
+        iframe.src = url + "?hideHeader";
+        dialog.showModal();
+        dialog.style.display = "block";
+
     }
+function closePropertyDialog(id) {
+    var dialog = document.getElementById(id);
+    dialog.style.display = "none";
+    dialog.close();
+}
 </script>
+<dialog id="helpdialog" style="display:none; width: 90%;">
+    <iframe width="100%" onload="resizeIframe(this)" height="100%" id="helpdialogiframe"></iframe>
+    <button onClick="closePropertyDialog('helpdialog')">Close</button>
+</dialog>
 <table>
     <thead>
         <tr>
