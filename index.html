@@ -1,17 +1,19 @@
 ---
 layout: default
 ---
-# Welcome to the Ident Archive
+<h1>Welcome to the Ident Archive</h1>
 
 All rights belong to the TV stations. This is a non-commercial archive.
 
 Current entry count: {{site.entries | size}}
 
-## Sort by
+<h2>Filter by:</h2>
 
-* [Organization](/categories/org/)
-* [Language](/categories/language/)
+<ul>
+<li><a href="/categories/org/">Organization</a></li>
+<li><a href="/categories/language/">Language</a></li>
+</ul>
 
-## Entries
+<h2>Entries</h2>
 
 {% include table.html entries=site.entries hide_date=true %}
