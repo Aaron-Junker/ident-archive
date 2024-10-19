@@ -59,7 +59,7 @@ function closePropertyDialog(id) {
             <tr>
                 <td colspan="4"><a href="{{entry.url}}">{{entry.fulltitle}}</a></td>
                 {% unless include.hide_org %}
-                <td><a title="{% include fullorgname.md language=entry.organization %}" href="/categories/org/{{ entry.organization }}">{{ entry.organization }}</a></td>
+                <td><a title="{% include fullorgname.md organization=entry.organization %}" href="/categories/org/{{ entry.organization }}">{{ entry.organization }}</a></td>
                 {% endunless %}
                 {% unless include.hide_language %}
                 <td><a href="/categories/language/{{ entry.language }}">{% include fulllanguagename.md language=entry.language %}</a></td>
