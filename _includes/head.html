@@ -13,6 +13,27 @@
         function resizeIframe(obj) {
             obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
         }
+
+        document.addEventListener("DOMContentLoaded", function(event) { 
+
+        const counters = document.querySelectorAll('.counter');
+        counters.forEach(counter => {
+        const updateCount = () => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText;
+            const increment = target / 200; // Adjust this value to control speed
+
+            if (count < target) {
+            counter.innerText = Math.ceil(count + increment);
+            setTimeout(updateCount, 1);
+            } else {
+            counter.innerText = target;
+            }
+        };
+
+        updateCount();
+        });
+    });
     </script>
     <style>
         #helpdialogiframe {
