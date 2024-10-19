@@ -17,7 +17,10 @@ bundle install
 The built-in Jekyll server can't handle this amount of video files. Because of this you have to run the following two commands in two different windows:
 
 ```bash
-bundle exec jekyll build --watch
+bundle exec jekyll build --watch --incremental
+```
+
+```bash
 bundle exec thin start -p 4000
 ```
 
