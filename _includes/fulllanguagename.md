@@ -1,4 +1,3 @@
-{% assign page_info = site.pages | find: 'smallname', include.language %}
-{{ include.language }}:
-{{ page_info }}
-{{ page_info.fullname }}
+{% assign page_name = include.language | append: '.md' %}
+{% assign page_info = site.pages | where: 'name', page_name %}
+{{ page_info[0].fullname }}
